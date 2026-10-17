@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111014">
+  <meta name="description" content="Discover nail services and nail art at Melody Hair and Beauty in Kilburn, London.">
+  <title>Melody Hair and Beauty | Nails & Beauty</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ff3e9d;
+      --pink-dark: #c71e72;
+      --pink-light: #ffe2ef;
+      --black: #111014;
+      --dark: #1b171c;
+      --cream: #fff9f7;
+      --white: #ffffff;
+      --muted: #777078;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--black);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .topbar {
+      padding: 10px 15px;
+      background: var(--pink);
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 17px 6%;
+      background: rgba(255, 249, 247, 0.97);
+      border-bottom: 1px solid #f0e3e9;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .logo .spark {
+      color: var(--pink);
+    }
+
+    .logo small {
+      margin-top: 6px;
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: 2.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 20px;
+      background: var(--pink);
+      color: white;
+      border: 1px solid var(--pink);
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .button:hover {
+      background: var(--pink-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-button {
+      display: none;
+      padding: 4px 8px;
+      background: none;
+      border: 0;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      align-items: center;
+      gap: 6%;
+      padding: 75px 8%;
+      background: var(--black);
+      color: white;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 em {
+      color: var(--pink);
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 490px;
+      margin-bottom: 28px;
+      color: #ddd4dc;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .outline-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border: 1px solid #ffffff99;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .outline-button:hover {
+      background: white;
+      color: var(--black);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 48% 48% 3px 3px;
+      border: 1px solid #ff3e9d44;
+      background: #33202c;
+    }
+
+    .image-label {
+      position: absolute;
+      bottom: 20px;
+      left: -20px;
+      max-width: 230px;
+      padding: 17px 20px;
+      background: white;
+      color: var(--black);
+      box-shadow: 0 10px 30px #0003;
+    }
+
+    .image-label small {
+      display: block;
+      color: var(--pink-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .image-label strong {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--serif);
+      font-size: 18px;
+    }
+
+    .marquee {
+      padding: 13px;
+      overflow: hidden;
+      background: var(--pink-light);
+      color: #702246;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2,
+    .story h2,
+    .booking h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .section-heading > p {
+      max-width: 440px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      padding: 28px;
+      background: white;
+      border: 1px solid #efdee7;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: var(--pink);
+    }
+
+    .number {
+      color: var(--pink-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .service h3 {
+      margin: 18px 0 10px;
+      font-family: var(--serif);
+      font-size: 26px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .gallery-section {
+      background: var(--dark);
+      color: white;
+    }
+
+    .gallery-section .section-heading > p {
+      color: #c8bec7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery figure {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      background: #282027;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 40px 18px 18px;
+      background: linear-gradient(transparent, #000d);
+      color: white;
+      font-family: var(--serif);
+      font-size: 21px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 8%;
+    }
+
+    .quote {
+      color: #652b49;
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.2;
+    }
+
+    .story p {
+      color: var(--muted);
+    }
+
+    .story .button {
+      margin-top: 10px;
+    }
+
+    .booking {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: start;
+      gap: 45px;
+      background: var(--pink-light);
+    }
+
+    .booking h2 span {
+      display: block;
+      color: var(--pink-dark);
+    }
+
+    .booking-intro p {
+      color: #6e5a65;
+    }
+
+    .contact-details {
+      margin-top: 25px;
+      padding-top: 18px;
+      border-top: 1px solid #eac6d7;
+    }
+
+    .contact-details a {
+      color: var(--pink-dark);
+      font-weight: 700;
+    }
+
+    .booking form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 15px;
+      border: 1px solid #e8c7d7;
+      border-radius: 3px;
+      background: white;
+      color: var(--black);
+      font-family: var(--sans);
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px #ff3e9d1c;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .booking form .button {
+      width: 100%;
+      min-height: 48px;
+      font-family: var(--sans);
+    }
+
+    .booking-contact {
+      grid-column: 2;
+      margin-top: -25px;
+      color: #6e5a65;
+      font-size: 13px;
+    }
+
+    .booking-contact a {
+      color: var(--pink-dark);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 45px 8% 20px;
+      background: var(--black);
+      color: white;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-bottom: 25px;
+    }
+
+    footer p {
+      color: #d0c5ce;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #ff80bd;
+    }
+
+    .copyright {
+      padding-top: 18px;
+      border-top: 1px solid #3a3039;
+      color: #a99ba5;
+      font-size: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .navbar {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .hero {
+        padding: 60px 6%;
+        gap: 30px;
+      }
+
+      .hero-image img {
+        height: 390px;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .gallery img {
+        height: 300px;
+      }
+
+      .booking {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        order: 5;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .navbar > .button {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 6% 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 13vw, 72px);
+      }
+
+      .hero-image {
+        max-width: 480px;
+        width: 100%;
+        margin: 12px auto 0;
+      }
+
+      .hero-image img {
+        height: 400px;
+      }
+
+      .image-label {
+        left: 10px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading > p {
+        margin-top: 18px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery img {
+        height: 280px;
+      }
+
+      .story,
+      .booking {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .booking-contact {
+        grid-column: 1;
+        margin-top: 0;
+      }
+
+      .input-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 360px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    YOUR NEXT FAVOURITE SET STARTS HERE ✦ KILBURN
+  </div>
+
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      Nail_By_Shi <span class="spark">✦</span>
+      <small></small>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#styles">Nail Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#story">About Us</a>
+      <a href="#booking">Book</a>
+    </div>
+
+    <a href="#booking" class="button">BOOK YOUR NAILS</a>
+
+    <button class="menu-button" id="menuButton"
+      type="button" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+  </nav>
+
+  <header class="hero" id="home">
+    <div>
+      <div class="eyebrow">NAILS · BEAUTY · CONFIDENCE</div>
+
+      <h1>
+        Your nails.<br>
+        <em>Your moment.</em>
+      </h1>
+
+      <p class="hero-copy">
+        Beautiful nails, thoughtful details and a little luxury
+        just for you. Discover your next favourite look at
+        Melody Hair and Beauty in Kilburn.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#styles" class="button">EXPLORE NAIL SERVICES</a>
+        <a href="#gallery" class="outline-button">SEE OUR GALLERY ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="1000028272.jpg"
+        alt="Elegant nude ombre nails with crystal star detail">
+      <div class="image-label">
+        <small>MELODY NOTE</small>
+        <strong>It's all in the details.</strong>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee">
+    MANICURES ✦ GEL NAILS ✦ NAIL ART ✦ FRENCH TIPS ✦ BEAUTIFUL DETAILS ✦
+  </div>
+
+  <section id="styles">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">THE NAIL MENU</div>
+        <h2>Find your<br>signature style.</h2>
+      </div>
+
+      <p>
+        From timeless, clean finishes to expressive nail art,
+        tell us the look you love and let's discuss your style.
+      </p>
+    </div>
+
+    <div class="services">
+      <article class="service">
+        <div class="number">01 — CLASSIC</div>
+        <h3>Manicure & pedicure</h3>
+        <p>
+          A neat, polished look with attention to nail shape
+          and beautiful finishing details.
+        </p>
+        <a href="#booking">ASK ABOUT THIS SERVICE ↗</a>
+      </article>
+
+      <article class="service">
+        <div class="number">02 — GLOSS</div>
+        <h3>Gel Nails & Extension</h3>
+        <p>
+          A glossy, polished finish for a fresh,
+          put-together look.
+        </p>
+        <a href="#booking">ASK ABOUT THIS SERVICE ↗</a>
+      </article>
+
+      <article class="service">
+        <div class="number">03 — ARTISTRY</div>
+        <h3>Nail Art</h3>
+        <p>
+          From French tips to creative designs, bring your
+          inspiration and discuss your look.
+        </p>
+        <a href="#booking">ASK ABOUT THIS SERVICE ↗</a>
+      </article>
+    </div>
+
+    <p class="note">
+      Contact us for current services, availability and prices.
+    </p>
+  </section>
+
+  <section class="gallery-section" id="gallery">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">THE GALLERY</div>
+        <h2>Small details.<br>Big energy.</h2>
+      </div>
+
+      <p>
+        Soft nudes, statement colours and playful nail art.
+        Browse the looks and choose inspiration for your next set.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="1000028272.jpg"
+          alt="Nude ombre nails with delicate crystal star embellishment"
+          loading="lazy">
+        <figcaption>Berry & Blush</figcaption>
+      </figure>
+
+      <figure>
+        <img src="1000028263.jpg"
+          alt="Burgundy nails with blush pink dotted nail art"
+          loading="lazy">
+        <figcaption>Pink Statment</figcaption>
+      </figure>
+
+      <figure>
+        <img src="1000028268.jpg"
+          alt="Glossy bright pink manicure"
+          loading="lazy">
+        <figcaption>The Bridal Glow</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="story">
+      <div class="quote">
+        “Beauty is in the details.
+        Make a little time for yourself.”
+      </div>
+
+      <div>
+        <div class="eyebrow">MEET MELODY</div>
+        <h2>Your time.<br>Your style.</h2>
+
+        <p>
+          Melody Hair and Beauty is based in Kilburn, London.
+          We want you to feel confident expressing your personal
+          style and enjoying a little beauty time.
+        </p>
+
+        <p>
+          Contact us to discuss your preferred nail service,
+          design ideas, appointment availability and pricing.
+        </p>
+
+        <a href="#booking" class="button">LET'S GET YOU BOOKED</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="booking-intro">
+      <div class="eyebrow">YOUR NAIL APPOINTMENT</div>
+
+      <h2>
+        LET'S CREATE
+        <span>YOUR NEXT LOOK.</span>
+      </h2>
+
+      <p>
+        Fill in the form and press Request Appointment.
+        Gmail will open with your appointment details ready to send.
+      </p>
+
+      <div class="contact-details">
+        <p><strong>Phone</strong><br>
+          <a href="tel:+447391872122">+44 7391 872122</a>
+        </p>
+
+        <p><strong>Location</strong><br>
+          5 glengall road, NW6 7EL Kilburn, London
+        </p>
+
+        <p><strong>Email</strong><br>
+          <a href="mailto:shimaghasemi65@gmail.com">
+            shimaghasemi65@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <form id="bookingForm">
+      <div class="input-row">
+        <input
+          type="text"
+          id="customerName"
+          name="name"
+          placeholder="Your name"
+          autocomplete="name"
+          required>
+
+        <input
+          type="email"
+          id="customerEmail"
+          name="email"
+          placeholder="Your email address"
+          autocomplete="email"
+          required>
+      </div>
+
+      <select id="serviceStyle" name="style" required>
+        <option value="">Choose a nail service</option>
+        <option value="Manicure">Manicure</option>
+        <option value="Gel Nails">Gel Nails</option>
+        <option value="Nail Art">Nail Art</option>
+        <option value="French Tips">French Tips</option>
+        <option value="Other / Not Sure Yet">Other / Not Sure Yet</option>
+      </select>
+
+      <textarea
+        id="appointmentMessage"
+        name="message"
+        rows="5"
+        placeholder="Preferred date, time and design ideas..."
+        required></textarea>
+
+      <button type="submit" class="button">
+        REQUEST APPOINTMENT
+      </button>
+    </form>
+
+    <p class="booking-contact">
+      Prefer to email directly?
+      <a href="mailto:shimaghasemi65@gmail.com">Contact Melody</a>
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div class="logo">
+          Nail__By__Shima <span class="spark">✦</span>
+          <small></small>
+        </div>
+        <p>Your beauty, your way.</p>
+      </div>
+
+      <div>
+        <p><strong>Location</strong><br>Kilburn, London</p>
+        <p><strong>Phone</strong><br>
+          <a href="tel:+447391872122">+44 7391 872122</a>
+        </p>
+        <p><strong>Email</strong><br>
+          <a href="mailto:shimaghasemi65@gmail.com">
+            shimaghasemi65@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Nail__By__Shima. All rights reserved.     ⭐⭐⭐⭐⭐"five star experiences in treatwell"
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuButton.textContent = isOpen ? "✕" : "☰";
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      const style = document.getElementById("serviceStyle").value;
+      const message = document.getElementById("appointmentMessage").value.trim();
+
+      const subject = "Nail Appointment Request - Melody Hair and Beauty";
+
+      const body =
+        "MELODY HAIR AND BEAUTY - APPOINTMENT REQUEST\n\n" +
+        "Name: " + name + "\n" +
+        "Customer email: " + email + "\n" +
+        "Requested service: " + style + "\n\n" +
+        "Preferred date, time and design ideas:\n" + message + "\n\n" +
+        "Location: Kilburn, London\n" +
+        "Phone: +44 7391 872122";
+
+      const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=shimaghasemi65%40gmail.com" +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.open(gmailUrl, "_blank", "noopener");
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
